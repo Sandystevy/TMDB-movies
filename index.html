@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Movie App</title>
+</head>
+<body>
+    <header class="main_header">
+        <div class="header_info">
+            <h1>Welcome.</h1>
+            <h3>Millions of movies to discover. Explore now.</h3>
+        </div>
+   
+        <div class="form_div">
+            <form id="form" >
+                <input type="text" placeholder="search for a movie...." id="search" class="search">
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+    </header>
+    <div id="tags">
+        <div class="tag"></div>
+    </div>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content" id="overlay_content"></div>
+    </div>
+
+    <main id="mainSection"></main>
+    <div class="pagination">
+        <div class="page" id="previous">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+    </div>
+
+
+    <script src="/app.js"></script>
+</body>
+</html>
