@@ -1,6 +1,6 @@
 const API_KEY = 'api_key=b5a98eab4da72cac6d6017bab86d8978';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+ API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURl = BASE_URL + '/search/movie?' + API_KEY;
 
@@ -92,6 +92,7 @@ const previous = document.getElementById('previous');
 const next = document.getElementById('next');
 const current = document.getElementById('current');
 
+
 let currentPage = 1;
 let nextPage = 2;
 let previousPage = 3;
@@ -144,6 +145,7 @@ function highlightSelection() {
     }
     
 }
+
 function exitBtn() { 
     let exitBtn = document.getElementById('exit');
 
@@ -169,6 +171,7 @@ getMovies(API_URL);
 
 function getMovies(url) {
     lastUrl = url;
+    // axios.get(url)
     fetch(url)
     .then(res => res.json())
     .then(data => {
@@ -197,6 +200,9 @@ function getMovies(url) {
             mainSection.innerHTML = `<h1 class= "no_results">No Results Found</h1>`
         }
         tagsEl.scrollIntoView({behavior : 'smooth'})
+    })
+    .catch(e => {
+        console.log("Error")
     })
 }
 
@@ -307,14 +313,14 @@ function getcolor(vote) {
 }
 
 form.addEventListener('submit', (e) => {
-    e.previousentDefault();
+    e.preventDefault();
 
     const searchTearm = search.value; 
     selectedGenre = []; 
     highlightSelection()
 
     if(searchTearm) {
-        getMovies(searchURl+'&query=' +searchTearm)
+        getMovies(searchURl+'&query='+searchTearm)
     } else{
         getMovies(API_URL);
     }
